@@ -1,0 +1,15 @@
+# Utiliser l'image de base pour Java
+FROM openjdk:17-jdk
+
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Copier le fichier JAR de votre application dans le conteneur
+COPY target/tp-foyer-5.0.0.jar app.jar
+
+# Exposer le port sur lequel l'application écoute
+EXPOSE 8089
+
+# Commande pour exécuter l'application
+ENTRYPOINT ["java", "-jar", "app.jar"]
+
